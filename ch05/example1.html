@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    table,tr,th,td{
+        border:solid 1px rgb(0, 0, 0);
+        /* border-collapse: collapse; */
+        /* padding:1px; */
+    }
+</style>
+</head>
+<body>
+    
+    <h3>회원 가입</h3>
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id"></td>
+
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="password" name="passwordcheck"></td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><input type="tel" name="tel" placeholder="010-123-4567"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>문자수신 여부</td>
+            <td><input type="radio" name="yes" checked>예
+                <input type="radio" name="no">아니오
+                </td>
+        </tr>
+        <tr>
+            <td>가입경로</td>
+            <td><input type="checkbox" name="route">친구 소개
+                <input type="checkbox" name="route">인터넷 검색
+                <input type="checkbox" name="route">블로그
+                <input type="checkbox" name="route">기타
+
+            </td>
+        </tr>
+    </table>
+    </body>
+</html>
