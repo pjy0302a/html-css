@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>화면구현</title>
+    <style>
+        * {
+            box-sizing: border-box;
+           list-style: none;
+           
+
+        }
+
+        
+
+        #container {
+            width: 96%;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        header>* {
+            display: inline-block;
+            margin: 20px auto;
+
+        }
+
+        header>div>ul>li {
+            float: left;
+            padding: 10px;
+            font-size: x-large;
+            color: darkgrey;
+            font-weight: bold;
+            border-top: 1px solid darkgrey;
+            border-bottom: 1px solid darkgrey;
+        }
+
+        nav {
+            width: 20%;
+            float: left;
+            padding: 10px;
+        }
+
+        nav>div:first-child {
+
+            color: darkgrey;
+            font-size: xx-large;
+            font-weight: bold;
+            padding: 10px 0;
+
+            text-align: left;
+
+            border-bottom: 2px solid darkgrey;
+        }
+
+        nav>div>ul>li {
+            color: darkgrey;
+            font-size: large;
+
+            padding: 10px 0;
+            text-align: left;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        
+        main {
+            width: 80%;
+            float: left;
+
+
+        }
+
+
+        main>section:first-child>div:nth-of-type(1) {
+            
+            color: darkgrey;
+            font-size: xx-large;
+            font-weight: bold;
+            padding: 15px;
+            border-bottom: 2px solid lightgrey;
+        }
+
+        main>section:first-child>div:nth-of-type(2)>div:first-child {
+            float: left;
+           
+            color: darkgrey;
+            font-size: small;
+            
+        }
+        main>section:first-child>div:nth-of-type(2)>div:last-child {
+            float: right;
+            
+            
+        }
+
+       
+        select {
+            width: 100px;
+            height: 30px;
+        }
+        input[type=text] {
+            width: 200px;
+            height: 30px;
+        }
+        input[type=button] {
+            width: 50px;
+            height: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: small;
+
+        }
+
+        th {
+            border-top: 2px solid darkgrey;
+            border-bottom: 1px solid lightgrey;
+            padding: 10px 0;
+            color: darkgrey;
+        }
+
+        td {
+            text-align: center;
+            color: darkgrey;
+            padding: 15px 5px;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        tbody>tr>td:nth-of-type(2) {
+            text-align: left;
+        }
+
+
+
+        main>section:last-child>div {
+            text-align: center;
+            font-size: small;
+        }
+
+        
+        .click a{
+            text-decoration: none;
+        }
+        .click a:link,a:visited{
+            
+        }
+        .nav a:active{
+            
+        }
+        strong{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div>
+                <ul class="click">
+                    <li><a href="#">감염병</a></li>
+                    <li><a href="#">건강정보</a></li>
+                    <li><a href="#">정책정보</a></li>
+                    <li><a href="#">연구개발</a></li>
+                    <li><a href="#">알림·자료</a></li>
+                    <li><a href="#">간행물·통계</a></li>
+                    <li><a href="#">민원·정보공개</a></li>
+                    <li><a href="#">기관소개</a></li>
+                    <li><a href="#">사업별누리집</a></li>
+                </ul>
+            </div>
+        </header>
+        <nav>
+            <div>알림·자료</div>
+            <div>
+                <ul>
+                    <li>이달의 건강소식</li>
+                    <li>보도자료</li>
+                    <li>포토뉴스</li>
+                    <li>홍보자료</li>
+                    <li>공지사항</li>
+                    <li><a href="#">공고/공시</a></li>
+                    <li>채용공고</li>
+                    <li>법령·지침·서식</li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <section>
+                <div>공고/공시</div>
+                <div>
+                    
+                    <div>전체 3,320건,현재 페이지<strong>2</strong>/332</div>
+                    <div>
+                        <select>
+                            <option value="title">제목</option>
+                            <option value="writer">작성자</option>
+                            <option value="content">내용</option>
+                        </select>
+                        <input type="text" placeholder="검색어를입력하세요" />
+                        <input type="button" value="검색">
+                     </div>
+                     
+                 </div>
+            </section>
+
+            <section>
+                <table>
+                    <col style="width:5%">
+                    <col style="width:50%">
+                    <col style="width:20%">
+                    <col style="width:15%">
+                    <col style="width:8%">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일자</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3310</td>
+                            <td>[건강정보 개발 및 국가건강정보포털 운영] 2022년 민간위···</td>
+                            <td>만성질환예방과</td>
+                            <td>2021-12-28</td>
+                            <td>137</td>
+                        </tr>
+                        <tr>
+                            <td>3309</td>
+                            <td>국제공인예방접종지정기관 지정공고</td>
+                            <td>질병관리청 검역정책과</td>
+                            <td>2021-12-23</td>
+                            <td>305</td>
+                        </tr>
+                        <tr>
+                            <td>3308</td>
+                            <td>2022년 환전외국환은행 선정결과 공고</td>
+                            <td>백신계약팀</td>
+                            <td>2021-12-23</td>
+                            <td>184</td>
+                        </tr>
+                        <tr>
+                            <td>3307</td>
+                            <td>2021년 질병관리청 정책연구용역(강원도 홍천군과 횡성군 ···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-20</td>
+                            <td>378</td>
+                        </tr>
+                        <tr>
+                            <td>3306</td>
+                            <td>2021년 질병관리청 정책연구용역(국민건강영양조사 원시자···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-17</td>
+                            <td>432</td>
+                        </tr>
+                        <tr>
+                            <td>3305</td>
+                            <td>2021년 질병관리청 건강영양조사분석과 정책연구용역(3건)···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-14</td>
+                            <td>770</td>
+                        </tr>
+                        <tr>
+                            <td>3304</td>
+                            <td>[제1차 기후보건영향평가] 공청회 개최 공고</td>
+                            <td>미래질병대비과</td>
+                            <td>2021-12-08</td>
+                            <td>438</td>
+                        </tr>
+                        <tr>
+                            <td>3303</td>
+                            <td>2021년 질병관리청 정책연구용역(인권관점의 방역체계 구···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-07</td>
+                            <td>633</td>
+                        </tr>
+                        <tr>
+                            <td>3302</td>
+                            <td>2021년 질병관리청 만설질환 관리과 정책연구용역(4건) 입···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-07</td>
+                            <td>583</td>
+                        </tr>
+                        <tr>
+                            <td>3301</td>
+                            <td>2021년 질병관리청 정책연구용역(404호,405호) 입찰공고 ···</td>
+                            <td>운영지원과</td>
+                            <td>2021-12-06</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <span>&lt;&lt;</span>
+                    <span>&lt;</span>
+                    <div>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                    </div>
+                    <span>&gt;</span>
+                    <span>&gt;&gt;</span>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

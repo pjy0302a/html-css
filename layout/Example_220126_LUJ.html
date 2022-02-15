@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #container {
+            /* border: 1px solid black; */
+            width: 96%;
+            margin: 2%;
+        }
+        
+        a:link, a:visited {
+            color: black;
+            text-decoration: none;
+        }
+        header .selected {
+            border-bottom: 5px solid rgb(53, 201, 186);
+        }
+        header .selected a {
+            color: rgb(53, 201, 186);
+        }
+        aside .selected{
+            background-color: rgb(53, 201, 186);
+        }
+        aside .selected a {
+            color: white;
+        }
+        main > div:last-child > div:last-child .selected {
+            background-color: rgb(53, 201, 186);
+        }
+        main > div:last-child > div:last-child .selected a {
+            color: white;
+        }
+
+
+
+
+        header nav div {
+            width: 100%;
+            height: 55px;
+            margin: 5px;
+            border-top: 1px solid lightgrey;
+            border-bottom: 1px solid rgb(160, 160, 160);
+        }
+        header nav div ul li {
+            float: left;
+            width: calc(100%/9);
+            text-align: center;
+            line-height: 50px;
+        }
+
+
+        aside {
+            float: left;
+            width: 20%;
+            padding: 30px 20px 0 0;
+        }
+        aside nav div:first-child {
+            font-size: x-large;
+            padding: 20px 0;
+        }
+        aside nav div:last-child ul li {
+            border-top: 1px solid lightgrey;
+            padding: 10px;
+            height: 50px;
+            line-height: 25px;
+        }
+
+
+        main {
+            float: left;
+            width: 80%;
+        }
+        main > div:first-child {
+            /* Home > 알림자료 > 공고공시 */
+            margin: 10px 0;
+            height: 20px;
+            text-align: right;
+        }
+        main > div:nth-of-type(2) {
+            /* 공고/공시 */
+            font-size: x-large;
+            font-weight: bold;
+            padding: 15px 0;
+        }
+        main > div:last-child > div:first-child  {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            height: 100px;
+        }
+        main > div:last-child  > div:first-child > div:first-child {
+            /* 전체 3300건 현재페이지 */
+            float: left;
+            font-size: small;
+            padding-top: 70px;
+            /* background-color: black; */
+        }
+        main > div:last-child > div:first-child > div:last-child  {
+            /* 검색창 */
+            float: right;
+            font-size: xx-large;
+            padding-top: 50px;
+            /* background-color: black; */
+        }
+        select {
+            width: 100px;
+            height: 30px;
+        }
+        input[type=text] {
+            width: 200px;
+            height: 30px;
+        }
+        input[type=button] {
+            width: 30px;
+            height: 30px;
+        }
+
+
+
+        table {
+            clear: both;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        thead, tbody {
+            text-align: center;
+        }
+        tbody tr td:nth-of-type(2) {
+            text-align: left;
+        }
+        tr {
+            height: 50px;
+            border-top: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+        }
+        td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+
+        main > div:last-child > div:last-child {
+             /* 페이지 번호 */
+            text-align: center;
+        }
+        main > div:last-child > div:last-child > span {
+            width: 50px;
+            height: 50px;
+            font-size: x-small;
+            font-weight: bold;
+            padding: 5px;
+            border: 1px solid lightgrey;
+            border-radius: 25px;
+        }
+        main > div:last-child > div:last-child > span:nth-of-type(3) {
+            border: none;
+        }
+        main > div:last-child > div:last-child > span > span {
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+            border-radius: 25px;
+        }
+
+
+
+        footer div {
+            clear: both;
+            height: 100px;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div>
+                    <!-- 메뉴 -->
+                    <ul>
+                        <li><a href="#">감염병</a></li>
+                        <li><a href="#">건강정보</a></li>
+                        <li><a href="#">정책정보</a></li>
+                        <li><a href="#">연구개발</a></li>
+                        <li class="selected"><a href="#">알림·자료</a></li>
+                        <li><a href="#">간행물·통계</a></li>
+                        <li><a href="#">민원·정보공개</a></li>
+                        <li><a href="#">기관소개</a></li>
+                        <li><a href="#">사업별 누리집</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        
+
+        <aside>
+            <nav>
+                <!-- 메뉴 -->
+                <div>알림·자료</div>
+                <div>
+                    <ul>
+                        <li><a href="#">이달의건강소식</a><div></div></li>
+                        <li><a href="#">보도자료</a><div></div></li>
+                        <li><a href="#">포토뉴스</a><div></div></li>
+                        <li><a href="#">홍보자료</a><div></div></li>
+                        <li><a href="#">공지사항</a><div></div></li>
+                        <li class="selected"><a href="#">공고/공시</a><div></div></li>
+                        <li><a href="#">채용공고</a><div></div></li>
+                        <li><a href="#">법령·지침·서식</a><div></div></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        
+
+
+        <section>
+            <main>
+                <div>Home > 알림·자료 > 공고/공시</div>
+                <div>공고/공시</div>
+                <div>
+                    <div>
+                        <div>전체 3,320건, 현재 페이지 2/332</div>
+                        <div>
+                            <select>
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                            </select>
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <input type="button" value=	
+                            &#128269;>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>번호</td>
+                                <td>제목</td>
+                                <td>작성자</td>
+                                <td>작성일자</td>
+                                <td>조회수</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <colgroup>
+                                <col>
+                                <col style="width: 50%;">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <td>3310</td>
+                                <td>[건강정보 개발 및 국가건강정보포털 운영] 2022년 민간위탁...</td>
+                                <td>만성질환예방과</td>
+                                <td>2021-12-28</td>
+                                <td>137</td>
+                            </tr>
+                            <tr>
+                                <td>3309</td>
+                                <td>국제공인예방접종지정기관 지정 공고</td>
+                                <td>질병관리청 검역정책과</td>
+                                <td>2021-12-23</td>
+                                <td>305</td>
+                            </tr>
+                            <tr>
+                                <td>3308</td>
+                                <td>2022년 환전외국환은행 선정결과 공고</td>
+                                <td>백신계약팀</td>
+                                <td>2021-12-23</td>
+                                <td>184</td>
+                            </tr>
+                            <tr>
+                                <td>3307</td>
+                                <td>2021년 질병관리청 정책연구용역(강원도 홍천군과 횡성군...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-20</td>
+                                <td>378</td>
+                            </tr>
+                            <tr>
+                                <td>3306</td>
+                                <td>2021년 질병관리청 정책연구용역(국민건강영양조사 원시자...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-17</td>
+                                <td>432</td>
+                            </tr>
+                            <tr>
+                                <td>3305</td>
+                                <td>2021년 질병관리청 건강영양조사분석과 정책연구용역(3건)...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-14</td>
+                                <td>770</td>
+                            </tr>
+                            <tr>
+                                <td>3304</td>
+                                <td>[제1차 기후보건영양평가] 공청회 개최 공고</td>
+                                <td>미래질병대비과</td>
+                                <td>2021-12-08</td>
+                                <td>438</td>
+                            </tr>
+                            <tr>
+                                <td>3303</td>
+                                <td>2021년 질병관리청 정책연구용역(인권 관점의 방역체게 구축...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-07</td>
+                                <td>633</td>
+                            </tr>
+                            <tr>
+                                <td>3302</td>
+                                <td>2021년 질병관리청 만성질환 관리과 정책연구용역(4건) 입찰...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-07</td>
+                                <td>583</td>
+                            </tr>
+                            <tr>
+                                <td>3301</td>
+                                <td>2021년 질병관리청 정책연구용역(404호, 405호) 입찰 공고...</td>
+                                <td>운영지원과</td>
+                                <td>2021-12-06</td>
+                                <td>500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <span>&lt;&lt;</span>
+                        <span>&nbsp;&lt;&nbsp;</span>
+                        <span>
+                            <span><a href="#">&nbsp;1&nbsp;</a></span>
+                            <span class="selected"><a href="#">&nbsp;2&nbsp;</a></span>
+                            <span><a href="#">&nbsp;3&nbsp;</a></span>
+                            <span><a href="#">&nbsp;4&nbsp;</a></span>
+                            <span><a href="#">&nbsp;5&nbsp;</a></span>
+                            <span><a href="#">&nbsp;6&nbsp;</a></span>
+                            <span><a href="#">&nbsp;7&nbsp;</a></span>
+                            <span><a href="#">&nbsp;8&nbsp;</a></span>
+                            <span><a href="#">&nbsp;9&nbsp;</a></span>
+                            <span><a href="#">10</a></span>
+                        </span>
+                        <span>&nbsp;&gt;&nbsp;</span>
+                        <span>&gt;&gt;</span>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <footer>
+            <!-- 빈 푸터 -->
+            <div></div>
+        </footer>
+    </div>
+</body>
+</html>
