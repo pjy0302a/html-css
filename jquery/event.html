@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="fruit">
+        
+    </ul>
+    <script>
+        data = [ '사과','배','키위' ]
+
+        for(f of data){
+            let $li = $("<li>").html(f)
+            //addEventListener("click", function(){})
+            let $fruit = $("#fruit")
+            
+            //직접이벤트1, li마다 이벤트 직접걸어줌.
+            $li.bind("click", function(){
+                //console.log(this.innerHTML) //DOM api
+               console.log($(this).html()); //jquery함수임, this는 li태그를 가리킴.
+            });                            
+            $fruit.append($li)  
+            // $("#fruit").append( $("<li>").html(f) )  // 부-자
+            // $("<li>").html(f).appendTo($("#fruit"))  // 자-부
+        }
+        // 이벤트 전파2
+        // $("#fruit").bind("click", function(){
+        //     //$(this) //bind앞의 태그가 this
+        //     console.log($(event.target).html());
+        // })
+
+     
+        //그룹(위임)이벤트3
+        // $("#fruit").on("click", "li", function(){
+        //     console.log($(this).html());
+        // })
+
+        //자바스크립트 그룹이벤트
+        fruit.addEventListener("click", function(){
+            debugger
+            if(event.target.nodeName =="LI"){
+                console.log(event.target.innerHTML);
+            }
+        })
+
+
+        // for(var i=0; i<data.length; i++){
+        //     let $li = $("<li>").html(data[i])
+        //     let $fruit = $("#fruit")
+        //     $fruit.append($li)  
+        // }
+        
+    </script>
+</body>
+</html>

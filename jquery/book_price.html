@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><span class="book">자바 : </span><span class="price" data-pub="영진">4000원</span></li>
+        <li><span class="book">스프링 : </span><span class="price" data-pub="가람">5000원</span></li>
+        <li><span class="book">오픈뱅킹 : </span><span class="price" data-pub="가메">6000원</span></li>
+    </ul>
+    <script>
+        $(".price").hide();
+        
+
+        $(".book").bind("mouseover", function(){
+            $(this).next().show()
+            console.log($(this).next().html())
+            console.log($(this).next().data("pub")) //출판사
+        })
+        
+        $(".book").bind("mouseout", function(){
+            $(this).next().hide()
+        })
+    </script>
+</body>
+</html>

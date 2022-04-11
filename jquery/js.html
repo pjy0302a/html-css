@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .lg{font-size: 2em;}
+    </style>
+</head>
+<body>
+  <input id="userId" name="userId" value="사과">
+  <input id="userName" name="userName" value="사과">
+
+
+  <div id="result">
+    <!--<p id="content" data-id='id1' style='color:blue; font-weight: 200;' class="bd lg">태그추가</p>-->
+ 
+  </div>  
+  
+  <script>
+   // txtFruit.value = "바나나"
+    '바나나'
+    result.innerText = "태그내용변경"
+    '태그내용변경'
+    result.innerHTML = "<b>태그내용변경</b>"
+    '<b>태그내용변경</b>'
+    result.outerHTML
+    '<div id="result"><b>태그내용변경</b></div>'
+    result.innerHTML += "되었습니다." 
+    '<b>태그내용변경</b>되었습니다.'
+
+    
+    // let pNode = document.createElement("p")
+    // pNode.innerHTML = "태그추가"
+    // pNode.setAttribute("id", "content")
+    // pNode.setAttribute("data-id", "id1")
+    // pNode.style.color = "blue"
+    // pNode.style.fontWeight = "200"
+    // pNode.classList.add("bd")
+    // pNode.classList.add("lg");
+    // result.append(pNode)
+    let pNode = `<p id="content" data-id='id1' style='color:blue; font-weight: 200;' class="bd lg">태그추가</p>`
+    result.innerHTML = pNode;
+
+    result.append(userId)
+    result.append(userName)
+    document.body
+    document.body.prepend(userId)
+    document.body.prepend(userName)
+    result.append(userId.clonenode())
+
+  </script>
+</body>
+</html>

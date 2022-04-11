@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="std">철수</td>
+            <td>100</td>
+            <td>70</td>
+            <td><button class="btn">선택</button></td>
+        </tr>
+        <tr>
+            <td>영희</td>
+            <td>50</td>
+            <td>80</td>
+            <td><button class="btn">선택</button></td>
+        </tr>
+        <tr>
+            <td>개똥</td>
+            <td>90</td>
+            <td>60</td>
+            <td><button class="btn">선택</button></td>
+        </tr>
+    </table>
+    <script>
+        $(".btn").on("click", function(){
+               //console.log("이름 : " + $(this).closest("tr").children().first().html());
+               let tds = $(this).closest("tr").children();
+               let nm = tds.eq(0).html(); //first()
+               let kor = tds.eq(1).html();
+               let eng = tds.eq(2).html() ;//last()
+               console.log(nm,kor,eng);
+              // console.log("이름 : " + $(this).parent().parent().children().first().html());
+               
+               //console.log("국어 : " + $(this).parent().prev().prev().html());  
+               //console.log("수학 : " + $(this).parent().prev().html());  
+               
+            });                           
+        
+
+    </script>
+    
+</body>
+</html>

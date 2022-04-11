@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .lg{font-size: 2em;}
+    </style>
+    <!--<p id="content" data-id='id1' style='color:blue; font-weight: 200;' class="bd lg">태그추가</p>-->
+</head>
+<body>
+    <div id="result">    
+         
+    </div> 
+
+    <script>
+// let pNode = document.createElement("p")
+    // pNode.innerHTML = "태그추가"
+    // pNode.setAttribute("id", "content")
+    // pNode.setAttribute("data-id", "id1")
+    // pNode.style.color = "blue"
+    // pNode.style.fontWeight = "200"
+    // pNode.classList.add("bd")
+    // pNode.classList.add("lg");
+    // result.append(pNode)
+
+    let $pNode = $("<p>")
+        $pNode.html("태그추가")
+        $pNode.attr('id','content')
+        $pNode.data('id', 'id1') //콘솔에는 안보임. 
+        $pNode.css('color','blue')
+        $pNode.css('fontWeight', '200')
+        $pNode.addClass('bd')
+        $pNode.addClass('lg')
+
+        let $result = $("#result")
+        $result.append($pNode)
+    </script>
+</body>
+</html>

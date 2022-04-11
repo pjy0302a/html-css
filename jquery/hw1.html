@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>이름</td>
+                <th>국어</td>
+                <th>영어</td>
+                <th>합계</td>    
+            </tr>
+        </thead>
+        <tr>
+            <td id="std">철수</td>
+            <td>90</td>
+            <td>70</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>영희</td>
+            <td>100</td>
+            <td>50</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>개똥</td>
+            <td>90</td>
+            <td>60</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table> 
+    <div id="result">국어<span id="kor"></span></div>  
+    <div id="result">영어<span id="eng"></span></div>
+    <script>
+        // $("tbody tr td:first-child")
+        // $("tbody tr td:nth-child(2)").css("color","green")
+        //국어의 합계를 계산해서 span#kor에 출력
+                
+        let kors = $("tbody tr td:nth-child(2)");
+        var sum=0;
+        for(ko of kors){         
+            sum += parseInt(ko.innerText);
+        }
+        console.log(sum)
+        $("#kor").html(sum)
+
+        
+        //영어의 합계를 계산해서 출력
+        let engs = $("tbody tr td:nth-child(3)")
+        var sum=0;
+        for(eng of engs){
+            sum+=parseInt(eng.innerText);
+        }
+        console.log(sum)
+        $("#eng").html(sum)
+
+    </script> 
+</body>
+</html>

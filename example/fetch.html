@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+select 
+{ 
+    width: 150px; /* 원하는 너비설정 */ 
+    height: 40px;
+    padding: .8em .5em; /* 여백으로 높이 설정 */ 
+    font-family: inherit; /* 폰트 상속 */ 
+    background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) 
+    no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+     border: 1px solid #999;
+     border-radius: 0px; /* iOS 둥근모서리 제거 */ 
+     -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+     -moz-appearance: none; appearance: none; }
+input{
+    width: 150px;
+    height: 40px;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid black;
+}
+table.eTable {
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 20px 10px;
+}
+table.eTable th {
+  width: 155px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: #ce4869 ;
+}
+table.eTable td {
+  width: 155px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #eee;
+}
+
+
+    </style>
+</head>
+
+    <body>
+        <span>
+            <select id="nationOne" >
+                <option value="" selected disabled>언어 선택</option>
+    
+                <c:forEach var="item" items="${eList}">
+                    <option value="${item.exchangeRate}">${item.nation }</option>
+    
+                </c:forEach>
+    
+            </select> <input type="text" id="money1" name="money1"
+                onchange="money1Select()">
+        </span>
+        <span>
+            <select id="nationTwo" >
+                <c:forEach var="item" items="${eList}">
+                    <option value="${item.exchangeRate}">${item.nation }</option>
+                </c:forEach>
+            </select> <input type="text" id="money2" name="money2"
+                onchange="money2Select()">
+        </span>
+        <div></div>
+        <table class="eTable">
+            <thead>
+            <tr>
+              <th scope="cols">국가</th>
+              <th scope="cols">환율</th>
+              <th scope="cols">통화</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!-- c:foreach 로 국가 환율 통화 목록 뽑기 -->
+            <tr>
+              <td>내용</th>
+              <td>내용</th>
+              <td>내용</th>
+            </tr>
+            <tr>
+              <td>내용</th>
+              <td>내용</th>
+              <td>내용</th>
+            </tr>
+            <tr>
+              <td>내용</th>
+              <td>내용</th>
+              <td>내용</th>
+            </tr>
+            </tbody>
+          </table>
+</body>
+</html>

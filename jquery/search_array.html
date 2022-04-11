@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>텍스트 추가/검색</title>
+<style>
+#result { border : 1px solid blue; 
+ width : 300px; height : 200px; }
+</style>
+<script>
+
+arr = [];
+//$(document).ready(function(){}) //1 //1,2,3 같음..
+//$(function(){}) //2  //ready(=load) 이벤트 핸들러
+window.onload = function(){  //body까지 실행되고나면 로드해라. //3
+$("#btnAdd").bind("click",funcAdd)
+$("#btnDelete").bind("click",funcDelete)
+$("#btnSearch").bind("click",funcSearch)
+$("#txtFruit").bind("focus", function(){$(this).select();})
+
+print();
+//$("#txtFruit").bind("blur", function(){$(this).val("");})
+}
+function funcAdd(){
+//텍스트 필드에 입력한 값을 배열에 추가하고 배열을 div에 출력
+   
+    arr.push( $("#txtFruit").val() );
+
+    print();
+}
+function funcDelete(){
+    
+    //인덱스 사용
+    let i = 0;
+    for(f of arr){
+        if(f == $("#txtFruit").val()){
+        arr.splice(i,1);
+        }
+        i++
+    }
+    print();
+
+}
+function funcSearch(){
+    for(f of arr){
+        if(f == $("#txtFruit").val()){
+            alert("검색결과 : " + f)
+        }
+    }
+    
+
+}
+function print(){
+        //배열을 div#result 태그에 <div>태그 생성해서 추가.
+            $("#result").empty();
+        for(f of arr){
+            let $result = $("#result");
+            let $div = $("<div>").html(f); 
+                $result.append($div)
+
+        }
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="txtFruit">
+<button type="button" id="btnAdd">추가</button>
+<button type="button" id="btnDelete">삭제</button>
+<button type="button" id="btnSearch">검색</button>
+<div id="result"></div>
+</body>
+</html>

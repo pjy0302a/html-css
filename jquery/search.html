@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>텍스트 추가/검색</title>
+<style>
+#result { border : 1px solid blue; 
+ width : 300px; height : 200px; }
+</style>
+<script>
+//let txtArr = [];
+//$(document).ready(function(){}) //1 //1,2,3 같음..
+//$(function(){}) //2  //ready(=load) 이벤트 핸들러
+window.onload = function(){  //body까지 실행되고나면 로드해라. //3
+$("#btnAdd").bind("click",funcAdd)
+$("#btnDelete").bind("click",funcDelete)
+$("#btnSearch").bind("click",funcSearch)
+$("#txtFruit").bind("focus", function(){$(this).select();})
+
+//$("#txtFruit").bind("blur", function(){$(this).val("");})
+}
+function funcAdd(){
+//텍스트필드에 입력한 값을 div태그생성해서 div#result에 출력
+    //1.div 태그생성
+    //2.html()
+    //3.append()
+    let $div = $("<div>").html( $(txtFruit).val() );
+    $("#result").append($div);
+    
+}
+function funcDelete(){
+//텍스트필드에 입력한 값을 배열에서 삭제하고 배열을 div에 출력
+    
+    let list = $("#result").children()
+        for(d of list){
+            fruit = $("#txtFruit").val();
+            if($(d).html() == fruit){ //js jq
+                $(d).remove();
+            }
+        }
+
+}
+function funcSearch(){
+//텍스트필드에 입력한 값을 검색해서 검색위치를 alert출력
+    let list = $("#result").children()
+    
+    for(i=0; i<list.length; i++ ){
+        console.log(list.length)
+        fruit = $("#txtFruit").val();
+            if(list.eq(i).html() == fruit){ //js jq
+                alert(i+1+"번째 위치함.")
+
+                
+            }
+    }
+}
+</script>
+</head>
+<body>
+<input type="text" id="txtFruit">
+<button type="button" id="btnAdd">추가</button>
+<button type="button" id="btnDelete">삭제</button>
+<button type="button" id="btnSearch">검색</button>
+<div id="result"></div>
+</body>
+</html>
